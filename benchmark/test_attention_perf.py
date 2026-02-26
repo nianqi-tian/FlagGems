@@ -464,7 +464,7 @@ def flash_attn_varlen_legacy(*args, **kwargs):
     SkipVersion("torch", "<2.7"),
     reason="The version prior to 2.7 is not compatible with VLLM.",
 )
-#@pytest.mark.skipif(vendor_name == "kunlunxin", reason="RESULT TODOFIX")
+# @pytest.mark.skipif(vendor_name == "kunlunxin", reason="RESULT TODOFIX")
 @pytest.mark.skipif(vendor_name == "hygon", reason="RuntimeError")
 @pytest.mark.skipif(vendor_name == "mthreads", reason="Torch < 2.7")
 @pytest.mark.skipif(flag_gems.vendor_name == "cambricon", reason="TypeError")
