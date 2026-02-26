@@ -16,6 +16,7 @@ config_ = CodeGenConfig(
     prefer_1d_tile=True,
     buffer_size_limit=4096,
     isCloseVectorization=True,
+    kunlunAutoGrid=True,
     unroll_num=8,
 )
 
@@ -34,3 +35,9 @@ def exp(A):
 def exp_(A):
     logger.debug("GEMS EXP_")
     return exp_func(A, out0=A)
+
+
+# exp.out(Tensor self, *, Tensor(a!) out) -> Tensor(a!)
+def exp_out(A, out):
+    logger.debug("GEMS EXP_OUT")
+    return exp_func(A, out0=out)
